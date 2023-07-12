@@ -55,8 +55,8 @@ export default function DimensionsForm() {
             onchange={(e) => {
               boxCentimeters.value = Number(e.target.value);
 
-              width1.value = boxCentimeters.value - boxCentimetersSubract;
-              width2.value = boxCentimeters.value - boxCentimetersSubract;
+              width1.value = boxCentimeters.value - boxCentimetersSubtract;
+              width2.value = boxCentimeters.value - boxCentimetersSubtract;
               finalText.value = {};
             }}
           />
