@@ -49,6 +49,7 @@ export default function DimensionsForm() {
           <span>Κουτί</span>
           <input
             type="number"
+            min={0}
             class="border border-gray-300 rounded-md px-2 ml-2"
             placeholder="Εκατοστά κουτιού"
             value={boxCentimeters}
@@ -63,6 +64,7 @@ export default function DimensionsForm() {
           <span>Ποσότητα</span>
           <input
             type="number"
+            min={0}
             value={quantity.value}
             onchange={(e) => {
               quantity.value = Number(e.target.value);
@@ -73,6 +75,7 @@ export default function DimensionsForm() {
           <span>Ύψος</span>
           <input
             type="number"
+            min={0}
             value={height.value}
             onchange={(e) => {
               height.value = Number(e.target.value);
@@ -83,6 +86,7 @@ export default function DimensionsForm() {
           <span>Βάθος</span>
           <input
             type="number"
+            min={0}
             value={depth.value}
             onchange={(e) => {
               depth.value = Number(e.target.value);
@@ -93,7 +97,7 @@ export default function DimensionsForm() {
 
           <span>Φάρδος</span>
           <input
-            type="number"
+            type="text"
             value={width1.value}
             onchange={(e) => {
               width1.value = Number(e.target.value);
@@ -104,6 +108,7 @@ export default function DimensionsForm() {
           <span>Βάθος</span>
           <input
             type="number"
+            min={0}
             value={depth1.value}
             onchange={(e) => {
               depth1.value = Number(e.target.value);
@@ -114,7 +119,7 @@ export default function DimensionsForm() {
 
           <span>Φάρδος</span>
           <input
-            type="number"
+            type="text"
             value={width2.value}
             onchange={(e) => {
               width2.value = Number(e.target.value);
@@ -125,6 +130,7 @@ export default function DimensionsForm() {
           <span>Βάθος</span>
           <input
             type="number"
+            min={0}
             value={depth2.value}
             onchange={(e) => {
               depth2.value = Number(e.target.value);
