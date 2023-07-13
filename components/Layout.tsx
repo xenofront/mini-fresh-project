@@ -1,7 +1,8 @@
+import { IChildren } from '../shared/intefaces.ts';
 import Footer from './Footer.tsx';
 import Header from './Header.tsx';
 
-export default function Layout({children}) {
+export default function Layout({children}: IChildren) {
   return (
     <div class="flex flex-col min-h-screen">
       <Header/>

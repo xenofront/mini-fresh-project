@@ -16,7 +16,6 @@ export default function DimensionsForm() {
 
   const finalText = useSignal({});
 
-
   const handleSubmit = (e) => {
     e.preventDefault();
     const valid = ![
@@ -28,17 +27,17 @@ export default function DimensionsForm() {
       depth1.value,
       width2.value,
       depth2.value
-    ].some(val => isNaN(val) || !val || val <= 0);
+    ].some((val) => isNaN(val) || !val || val <= 0);
 
     if (!valid) {
       alert('Παρακαλώ συμπλήρωσε σωστά τα πεδία');
       return;
     }
-    const sum = (2 * quantity) + quantity + (2 * quantity);
+    const sum = (2 * quantity.value) + quantity.value + (2 * quantity.value);
 
-    const first = `${2 * quantity} = ${height} x ${depth}`;
-    const second = `${quantity} = ${width1} x ${depth1}`;
-    const third = `${2 * quantity} = ${width2} x ${depth2}`;
+    const first = `${2 * quantity.value} = ${height.value} x ${depth.value}`;
+    const second = `${quantity.value} = ${width1.value} x ${depth1.value}`;
+    const third = `${2 * quantity.value} = ${width2.value} x ${depth2.value}`;
     finalText.value = {first, second, third, sum};
   };
 
@@ -53,7 +52,7 @@ export default function DimensionsForm() {
             class="border border-gray-300 rounded-md px-2 ml-2"
             placeholder="Εκατοστά κουτιού"
             value={boxCentimeters}
-            onchange={(e) => {
+            onChange={(e) => {
               boxCentimeters.value = Number(e.target.value);
 
               width1.value = boxCentimeters.value - boxCentimetersSubtract;
@@ -66,7 +65,7 @@ export default function DimensionsForm() {
             type="number"
             min={0}
             value={quantity.value}
-            onchange={(e) => {
+            onChange={(e) => {
               quantity.value = Number(e.target.value);
               finalText.value = {};
             }}
@@ -77,7 +76,7 @@ export default function DimensionsForm() {
             type="number"
             min={0}
             value={height.value}
-            onchange={(e) => {
+            onChange={(e) => {
               height.value = Number(e.target.value);
               finalText.value = {};
             }}
@@ -88,7 +87,7 @@ export default function DimensionsForm() {
             type="number"
             min={0}
             value={depth.value}
-            onchange={(e) => {
+            onChange={(e) => {
               depth.value = Number(e.target.value);
               finalText.value = {};
             }}
@@ -99,7 +98,7 @@ export default function DimensionsForm() {
           <input
             type="text"
             value={width1.value}
-            onchange={(e) => {
+            onChange={(e) => {
               width1.value = Number(e.target.value);
               finalText.value = {};
             }}
@@ -110,7 +109,7 @@ export default function DimensionsForm() {
             type="number"
             min={0}
             value={depth1.value}
-            onchange={(e) => {
+            onChange={(e) => {
               depth1.value = Number(e.target.value);
               finalText.value = {};
             }}
@@ -121,7 +120,7 @@ export default function DimensionsForm() {
           <input
             type="text"
             value={width2.value}
-            onchange={(e) => {
+            onChange={(e) => {
               width2.value = Number(e.target.value);
               finalText.value = {};
             }}
@@ -132,7 +131,7 @@ export default function DimensionsForm() {
             type="number"
             min={0}
             value={depth2.value}
-            onchange={(e) => {
+            onChange={(e) => {
               depth2.value = Number(e.target.value);
               finalText.value = {};
             }}
@@ -142,16 +141,18 @@ export default function DimensionsForm() {
             <button type="submit"></button>
             <Button variant="primary">Υπολόγισε</Button>
             <div>
-              {Object.keys(finalText.value).length > 0 && (<div class="mt-3">
-                <div>{finalText.value.first}</div>
-                <div>{finalText.value.second}</div>
-                <div>{finalText.value.third}</div>
-                <div>Σύνολο κουτιών {finalText.value.sum}</div>
-              </div>)}
+              {Object.keys(finalText.value).length > 0 && (
+                <div class="mt-3">
+                  <div>{finalText.value.first}</div>
+                  <div>{finalText.value.second}</div>
+                  <div>{finalText.value.third}</div>
+                  <div>Σύνολο κουτιών {finalText.value.sum}</div>
+                </div>
+              )}
             </div>
           </div>
         </div>
       </form>
     </>
   );
-};
+}
