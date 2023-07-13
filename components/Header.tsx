@@ -1,29 +1,18 @@
 import { Head } from '$fresh/runtime.ts';
+import NavBar from '../islands/NavBar.tsx';
 
 export default function Header() {
   return (
     <>
       <Head>
         <link rel="stylesheet" href="/styles.css"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
         <title>Mini Fresh App</title>
       </Head>
-      <header class="bg-gray-800 text-white py-4">
-        <div class="container mx-auto flex justify-between items-center px-4">
-          <a href="/">
-            <div class="cursor-pointer text-gray-300 hover:text-white">
-              <h1 class="text-2xl font-bold">Mini Fresh App</h1>
-            </div>
-          </a>
-          <nav>
-            <div class="flex">
-              <a href="/">
-                <div class="p-3">
-                  <span class="text-gray-300 hover:text-white">Home</span>
-                </div>
-              </a>
-            </div>
-          </nav>
-        </div>
+      <header>
+        <NavBar/>
       </header>
     </>
   );
