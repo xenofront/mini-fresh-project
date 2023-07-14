@@ -3,12 +3,10 @@ import { JSX } from 'preact';
 
 type ButtonProps = JSX.HTMLAttributes<HTMLButtonElement> & {
   variant?: 'primary' | 'danger' | 'warning' | 'success';
-  additionalClass?: string;
 };
 
 export function Button(props: ButtonProps) {
-  const {variant, additionalClass, ...rest} = props;
-
+  const {variant, ...rest} = props;
   const getButtonClasses = () => {
     switch (variant) {
       case 'danger':
@@ -26,7 +24,7 @@ export function Button(props: ButtonProps) {
     <button
       {...rest}
       disabled={!IS_BROWSER || props.disabled}
-      class={`border(gray-100 2) ${getButtonClasses()} ${additionalClass}`}
+      class={`border(gray-100 2) ${getButtonClasses()}`}
     />
   );
 }

@@ -1,4 +1,4 @@
-import Layout from '../components/Layout.tsx';
+import Layout from '../components/structure/Layout.tsx';
 import DimensionsForm from '../islands/DimensionsForm.tsx';
 
 export default function Home() {

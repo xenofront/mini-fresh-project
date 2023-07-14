@@ -1,4 +1,4 @@
-import Layout from '../components/Layout.tsx';
+import Layout from '../components/structure/Layout.tsx';
 
 export default function NotFoundPage() {
   return (

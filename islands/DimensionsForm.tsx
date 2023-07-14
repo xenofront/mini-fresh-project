@@ -138,8 +138,7 @@ export default function DimensionsForm() {
             class="border border-gray-300 rounded-md px-2 ml-2"
           />
           <div class="col-span-4 flex flex-col items-center justify-center">
-            <button type="submit"></button>
-            <Button variant="primary">Υπολόγισε</Button>
+            <Button variant="primary" type="submit">Υπολόγισε</Button>
             <div>
               {Object.keys(finalText.value).length > 0 && (
                 <div class="mt-3">
