@@ -18,7 +18,15 @@ export default function DimensionsForm() {
 
   const isFormValid = useSignal(true);
 
+  const counter = useSignal(0);
+  const showCounter = useSignal(false);
+  const handleCounter = async () => {
+    const _counter = await fetch('/api/counter');
+    counter.value = await _counter.json();
+  };
+
   const handleSubmit = (e) => {
+    handleCounter();
     isFormValid.value = true;
     e.preventDefault();
     const valid = ![
@@ -86,7 +94,7 @@ export default function DimensionsForm() {
             }}
             class="border border-gray-300 rounded-md px-2 ml-2 mr-0"
           />
-          <span>Βάθος</span>
+          <span onDblClick={() => showCounter.value = !showCounter.value}>Βάθος</span>
           <input
             type="number"
             min={0}
@@ -153,6 +161,7 @@ export default function DimensionsForm() {
           <div>{finalText.value.second}</div>
           <div>{finalText.value.third}</div>
           <div>{finalText.value.sum} Σύνολο κουτιών</div>
+          {showCounter.value && <div>{counter.value}</div>}
         </div>
       }
     </>

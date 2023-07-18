@@ -1,7 +1,7 @@
 import { ErrorPageProps } from '$fresh/server.ts';
 import Layout from '../components/structure/Layout.tsx';
 
-export default function _500({error}: ErrorPageProps) {
+export default function _500Page({error}: ErrorPageProps) {
   return (
     <Layout>
       <div class="flex flex-col justify-center items-center">

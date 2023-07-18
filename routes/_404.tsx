@@ -1,7 +1,7 @@
 import Layout from '../components/structure/Layout.tsx';
 import HistoryButton from '../islands/HistoryButton.tsx';
 
-export default function _404() {
+export default function _404Page() {
   return (
     <Layout>
       <div class="flex flex-col justify-center items-center">
