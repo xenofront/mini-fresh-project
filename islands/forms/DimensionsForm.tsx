@@ -4,9 +4,6 @@ import { Button } from '../../components/Button.tsx';
 const boxCentimetersSubtract = 3.2;
 
 export default function DimensionsForm() {
-  const counter = useSignal(0);
-  const showCounter = useSignal(false);
-
   const boxCentimeters = useSignal(50);
   const quantity = useSignal(2);
 
@@ -22,7 +19,6 @@ export default function DimensionsForm() {
   const isFormValid = useSignal(true);
 
   const handleSubmit = (e) => {
-    counter.value++;
     isFormValid.value = true;
     e.preventDefault();
     const valid = ![
@@ -112,7 +108,7 @@ export default function DimensionsForm() {
             }}
             class="border border-gray-300 rounded-md px-2 ml-2"
           />
-          <span ondblclick={() => showCounter.value = !showCounter.value}>Βάθος</span>
+          <span>Βάθος</span>
           <input
             type="number"
             min={0}
@@ -159,7 +155,6 @@ export default function DimensionsForm() {
           <div>{finalText.value.sum} Σύνολο κουτιών</div>
         </div>
       }
-      {showCounter.value && <span>{counter.value}</span>}
     </>
   );
 }
