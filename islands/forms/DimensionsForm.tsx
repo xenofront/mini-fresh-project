@@ -1,9 +1,12 @@
 import { useSignal } from '@preact/signals';
-import { Button } from '../components/Button.tsx';
+import { Button } from '../../components/Button.tsx';
 
 const boxCentimetersSubtract = 3.2;
 
 export default function DimensionsForm() {
+  const counter = useSignal(0);
+  const showCounter = useSignal(false);
+
   const boxCentimeters = useSignal(50);
   const quantity = useSignal(2);
 
@@ -16,7 +19,11 @@ export default function DimensionsForm() {
 
   const finalText = useSignal({});
 
+  const isFormValid = useSignal(true);
+
   const handleSubmit = (e) => {
+    counter.value++;
+    isFormValid.value = true;
     e.preventDefault();
     const valid = ![
       boxCentimeters.value,
@@ -30,7 +37,8 @@ export default function DimensionsForm() {
     ].some((val) => isNaN(val) || !val || val <= 0);
 
     if (!valid) {
-      alert('Παρακαλώ συμπλήρωσε σωστά τα πεδία');
+      isFormValid.value = false;
+      alert('Παρακαλώ συμπλήρωσε σωστά όλα τα πεδία');
       return;
     }
     const sum = (2 * quantity.value) + quantity.value + (2 * quantity.value);
@@ -43,7 +51,7 @@ export default function DimensionsForm() {
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
         <div class="mb-2 grid grid-cols-4 gap-4">
           <span>Κουτί</span>
           <input
@@ -104,7 +112,7 @@ export default function DimensionsForm() {
             }}
             class="border border-gray-300 rounded-md px-2 ml-2"
           />
-          <span>Βάθος</span>
+          <span ondblclick={() => showCounter.value = !showCounter.value}>Βάθος</span>
           <input
             type="number"
             min={0}
@@ -137,21 +145,21 @@ export default function DimensionsForm() {
             }}
             class="border border-gray-300 rounded-md px-2 ml-2"
           />
-          <div class="col-span-4 flex flex-col items-center justify-center">
+          <div class="col-span-4 flex flex-col">
             <Button variant="primary" type="submit">Υπολόγισε</Button>
-            <div>
-              {Object.keys(finalText.value).length > 0 && (
-                <div class="mt-3">
-                  <div>{finalText.value.first}</div>
-                  <div>{finalText.value.second}</div>
-                  <div>{finalText.value.third}</div>
-                  <div>Σύνολο κουτιών {finalText.value.sum}</div>
-                </div>
-              )}
-            </div>
           </div>
         </div>
       </form>
+
+      {Object.keys(finalText.value).length > 0 &&
+        <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+          <div>{finalText.value.first}</div>
+          <div>{finalText.value.second}</div>
+          <div>{finalText.value.third}</div>
+          <div>{finalText.value.sum} Σύνολο κουτιών</div>
+        </div>
+      }
+      {showCounter.value && <span>{counter.value}</span>}
     </>
   );
 }

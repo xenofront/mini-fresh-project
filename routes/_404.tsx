@@ -1,14 +1,17 @@
 import Layout from '../components/structure/Layout.tsx';
+import HistoryButton from '../islands/HistoryButton.tsx';
 
-export default function NotFoundPage() {
+export default function _404() {
   return (
     <Layout>
       <div class="flex flex-col justify-center items-center">
         <div class="text-6xl font-bold text-red-600">404</div>
         <div class="text-3xl text-gray-800">Η σελίδα δεν βρέθηκε</div>
-        <a href="/" class="text-lg text-blue-600 hover:underline mt-4">
-          Πίσω στην αρχική
-        </a>
+        <HistoryButton
+          text="Πλοήγηση πίσω"
+          direction="back"
+          classes="text-lg text-blue-600 hover:underline mt-4"
+        />
       </div>
     </Layout>
   );
