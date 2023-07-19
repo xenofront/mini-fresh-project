@@ -9,5 +9,7 @@ export default function HistoryButton(props: IHistoryProps) {
     props.direction === 'back' ? history.back() : history.forward();
   };
 
-  return <button onClick={handleHistory} class={props.classes}>{props.text}</button>;
+  return (
+    <button onClick={handleHistory} class={props.classes}>{props.text}</button>
+  );
 }

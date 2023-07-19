@@ -55,7 +55,10 @@ export default function DimensionsForm() {
 
   return (
     <>
-      <form onSubmit={handleSubmit} class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+      <form
+        onSubmit={handleSubmit}
+        class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
+      >
         <div class="mb-2 grid grid-cols-4 gap-4">
           <span>Κουτί</span>
           <input
@@ -94,7 +97,9 @@ export default function DimensionsForm() {
             }}
             class="border border-gray-300 rounded-md px-2 ml-2 mr-0"
           />
-          <span onDblClick={() => showCounter.value = !showCounter.value}>Βάθος</span>
+          <span onDblClick={() => showCounter.value = !showCounter.value}>
+            Βάθος
+          </span>
           <input
             type="number"
             min={0}
@@ -156,13 +161,15 @@ export default function DimensionsForm() {
       </form>
 
       {Object.keys(finalText.value).length > 0 &&
-        <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-          <div>{finalText.value.first}</div>
-          <div>{finalText.value.second}</div>
-          <div>{finalText.value.third}</div>
-          <div>{finalText.value.sum} Σύνολο κουτιών</div>
-          {showCounter.value && <div>{counter.value}</div>}
-        </div>
+        (
+          <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+            <div>{finalText.value.first}</div>
+            <div>{finalText.value.second}</div>
+            <div>{finalText.value.third}</div>
+            <div>{finalText.value.sum} Σύνολο κουτιών</div>
+            {showCounter.value && <div>{counter.value}</div>}
+          </div>
+        )
       }
     </>
   );
