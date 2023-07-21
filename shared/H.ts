@@ -14,13 +14,13 @@ export default class H {
 
     switch (logType) {
       case 'WARN':
-        console.log(`${yellow(`[${dateTime}] [${logType}] -`)} ${text}`);
+        console.warn(`${yellow(`[${dateTime}] [${logType}] -`)} ${text}`);
         break;
       case 'ERROR':
-        console.log(`${red(`[${dateTime}] [${logType}] -`)} ${text}`);
+        console.error(`${red(`[${dateTime}] [${logType}] -`)} ${text}`);
         break;
       default:
-        console.log(`${green(`[${dateTime}] [${logType}] -`)} ${text}`);
+        console.info(`${green(`[${dateTime}] [${logType}] -`)} ${text}`);
     }
   }
 }

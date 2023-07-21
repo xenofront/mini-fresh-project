@@ -26,7 +26,7 @@ export default function DimensionsForm() {
       const location = await res.json();
       const dateTime = H.formatDateTime(new Date());
 
-      console.log(`${yellow(dateTime)} - ${blue(location.city)}`);
+      H.log(`${yellow(dateTime)} - ${blue(location.city)}`);
     } catch (err) {
       H.log(err, 'ERROR');
     }
