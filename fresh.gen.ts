@@ -5,7 +5,7 @@
 import * as $0 from "./routes/_404.tsx";
 import * as $1 from "./routes/_500.tsx";
 import * as $2 from "./routes/about/index.tsx";
-import * as $3 from "./routes/api/counter.ts";
+import * as $3 from "./routes/api/geolocation.ts";
 import * as $4 from "./routes/index.tsx";
 import * as $$0 from "./islands/HistoryButton.tsx";
 import * as $$1 from "./islands/forms/DimensionsForm.tsx";
@@ -16,7 +16,7 @@ const manifest = {
     "./routes/_404.tsx": $0,
     "./routes/_500.tsx": $1,
     "./routes/about/index.tsx": $2,
-    "./routes/api/counter.ts": $3,
+    "./routes/api/geolocation.ts": $3,
     "./routes/index.tsx": $4,
   },
   islands: {

@@ -1,5 +1,7 @@
+import { blue, yellow } from '$std/fmt/colors.ts';
 import { useSignal } from '@preact/signals';
 import { Button } from '../../components/Button.tsx';
+import H from '../../shared/H.ts';
 
 const boxCentimetersSubtract = 3.2;
 
@@ -18,15 +20,18 @@ export default function DimensionsForm() {
 
   const isFormValid = useSignal(true);
 
-  const counter = useSignal(0);
-  const showCounter = useSignal(false);
-  const handleCounter = async () => {
-    const _counter = await fetch('/api/counter');
-    counter.value = await _counter.json();
-  };
+  const logInfo = async () => {
+    try {
+      const res = await fetch('api/geolocation');
+      const location = await res.json();
+      const dateTime = H.formatDateTime(new Date());
 
+      console.log(`${yellow(dateTime)} - ${blue(location.city)}`);
+    } catch (err) {
+      H.log(err, 'ERROR');
+    }
+  };
   const handleSubmit = (e) => {
-    handleCounter();
     isFormValid.value = true;
     e.preventDefault();
     const valid = ![
@@ -97,9 +102,7 @@ export default function DimensionsForm() {
             }}
             class="border border-gray-300 rounded-md px-2 ml-2 mr-0"
           />
-          <span onDblClick={() => showCounter.value = !showCounter.value}>
-            Βάθος
-          </span>
+          <span>Βάθος</span>
           <input
             type="number"
             min={0}
@@ -155,7 +158,7 @@ export default function DimensionsForm() {
             class="border border-gray-300 rounded-md px-2 ml-2"
           />
           <div class="col-span-4 flex flex-col">
-            <Button variant="primary" type="submit">Υπολόγισε</Button>
+            <Button variant="primary" type="submit" onClick={logInfo}>Υπολόγισε</Button>
           </div>
         </div>
       </form>
@@ -167,7 +170,6 @@ export default function DimensionsForm() {
             <div>{finalText.value.second}</div>
             <div>{finalText.value.third}</div>
             <div>{finalText.value.sum} Σύνολο κουτιών</div>
-            {showCounter.value && <div>{counter.value}</div>}
           </div>
         )
       }
