@@ -3,14 +3,15 @@ import H from '../../shared/H.ts';
 
 export const handler: Handlers = {
   async GET(_req: Request, _ctx: HandlerContext) {
-    let result;
+    let location;
     try {
       const request = await fetch('https://geolocation-db.com/json');
-      result = await request.json();
+      location = await request.json();
+      H.log(location.city);
     } catch (err) {
       H.log(err, 'ERROR');
     }
 
-    return Response.json(result);
+    return new Response();
   }
 };

@@ -1,4 +1,3 @@
-import { blue, yellow } from '$std/fmt/colors.ts';
 import { useSignal } from '@preact/signals';
 import { Button } from '../../components/Button.tsx';
 import H from '../../shared/H.ts';
@@ -22,11 +21,7 @@ export default function DimensionsForm() {
 
   const logInfo = async () => {
     try {
-      const res = await fetch('api/geolocation');
-      const location = await res.json();
-      const dateTime = H.formatDateTime(new Date());
-
-      H.log(`${yellow(dateTime)} - ${blue(location.city)}`);
+      await fetch('api/geolocation');
     } catch (err) {
       H.log(err, 'ERROR');
     }
