@@ -5,7 +5,7 @@ type ButtonProps = JSX.HTMLAttributes<HTMLButtonElement> & {
   variant?: 'primary' | 'danger' | 'warning' | 'success';
 };
 
-export function Button(props: ButtonProps) {
+export default function Button(props: ButtonProps) {
   const {variant, ...rest} = props;
   const getButtonClasses = () => {
     switch (variant) {
