@@ -1,5 +1,5 @@
-import Layout from '../components/structure/Layout.tsx';
-import HistoryButton from '../islands/HistoryButton.tsx';
+import Layout from '../components/structure/layout.tsx';
+import HistoryButton from '../islands/history-button.tsx';
 
 export default function _404Page() {
   return (

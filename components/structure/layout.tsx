@@ -1,7 +1,7 @@
 import { IChildren } from '../../shared/interfaces.ts';
-import Footer from './Footer.tsx';
-import Head from './Head.tsx';
-import Header from './Header.tsx';
+import Footer from './footer.tsx';
+import Head from './head.tsx';
+import Header from './header.tsx';
 
 export default function Layout({children}: IChildren) {
   return (

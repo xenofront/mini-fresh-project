@@ -1,4 +1,4 @@
-import NavBar from '../../islands/structure/NavBar.tsx';
+import NavBar from '../../islands/structure/nav-bar.tsx';
 
 export default function Header() {
   return (

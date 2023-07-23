@@ -1,5 +1,5 @@
 import { useSignal } from '@preact/signals';
-import { Button } from '../../components/Button.tsx';
+import { Button } from '../../components/button.tsx';
 import H from '../../shared/H.ts';
 
 const boxCentimetersSubtract = 3.2;

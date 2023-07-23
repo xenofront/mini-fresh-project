@@ -1,4 +1,4 @@
-import Layout from '../../components/structure/Layout.tsx';
+import Layout from '../../components/structure/layout.tsx';
 
 export default function AboutPage() {
   return (
