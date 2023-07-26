@@ -153,7 +153,7 @@ export default function DimensionsForm() {
             class="border border-gray-300 rounded-md px-2 ml-2"
           />
           <div class="col-span-4 flex flex-col">
-            <Button variant="primary" type="submit" onClick={logInfo}>Υπολόγισε</Button>
+            <Button variant="primary" type="submit">Υπολόγισε</Button>
           </div>
         </div>
       </form>

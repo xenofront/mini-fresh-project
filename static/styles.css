@@ -1,3 +1,8 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 @keyframes slide-down {
   0% {
     top: -100vh;
@@ -15,4 +20,26 @@
   overflow-y: auto;
   z-index: 1;
   animation: slide-down .3s;
+}
+
+@keyframes move-droplet {
+  0% {
+    cy: 25px;
+  }
+  40% {
+    cy: 35px;
+  }
+  100% {
+    cy: 400px;
+  }
+}
+
+.my-circle {
+  animation: move-droplet 2s linear infinite;
+}
+
+.my-svg {
+  display: inline;
+  width: 35px;
+  height: 59px;
 }
