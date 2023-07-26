@@ -34,17 +34,24 @@
   }
 }
 
-.my-circle {
+@-webkit-keyframes move-droplet {
+  0% {
+    cy: 25px;
+  }
+  40% {
+    cy: 35px;
+  }
+  100% {
+    cy: 400px;
+  }
+}
+
+.lemon-drop {
   animation: move-droplet 2s linear infinite;
 }
 
-.my-svg {
+.logo-svg {
   display: inline;
   width: 35px;
   height: 59px;
-}
-
-.fixed-position-on-mobile {
-  position: fixed;
-  transform: translate3d(0, 0, 0);
 }
