@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <footer class="bg-gray-800 text-white text-xs sm:text-base">
       <a target="_blank" href="https://github.com/xenofront/" class="fixed right-4 mt-5 sm:left-4">
-        <Image path="/me-logo.svg" alt="logo" classes="mt-1 w-16 sm:w-24 inline"/>
+        <Image path="/me-logo.svg" alt="logo" classes="mt-1 w-20 sm:w-24 inline"/>
       </a>
       <div class="text-left sm:text-center ml-4 sm:mr-0">
         &copy; {new Date().getFullYear()} Mini Fresh App - Powered by&nbsp;
