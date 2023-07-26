@@ -3,7 +3,7 @@ import Image from '../image.tsx';
 export default function Footer() {
   return (
     <footer class="bg-gray-800 text-white text-xs sm:text-base">
-      <a target="_blank" href="https://github.com/xenofront/" class="fixed right-4 mt-6 sm:left-4">
+      <a target="_blank" href="https://github.com/xenofront/" class="fixed right-4 mt-6 sm:left-4 z-10">
         <Image path="/me-logo.svg" alt="logo" classes="w-20 sm:w-24"/>
       </a>
       <div class="text-left sm:text-center ml-4 sm:mr-0">
