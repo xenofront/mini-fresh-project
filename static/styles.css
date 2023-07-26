@@ -43,3 +43,8 @@
   width: 35px;
   height: 59px;
 }
+
+.fixed-position-on-mobile {
+  position: fixed;
+  transform: translate3d(0, 0, 0);
+}
