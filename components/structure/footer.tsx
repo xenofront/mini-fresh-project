@@ -1,10 +1,7 @@
 export default function Footer() {
   return (
     <footer class="bg-gray-800 text-white text-xs sm:text-base p-2">
-      <a target="_blank" href="https://github.com/xenofront/" class="fixed right-4 mt-1 sm:left-4 z-10">
-        <img src={'/me-logo.svg'} alt="my logo" class="w-20 sm:w-24"/>
-      </a>
-      <div class="text-left sm:text-center ml-4 sm:mr-0">
+      <div class="text-center">
         &copy; {new Date().getFullYear()} Mini Fresh App - Powered by&nbsp;
         <a target="_blank" href="https://fresh.deno.dev/">
 
