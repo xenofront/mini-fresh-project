@@ -48,6 +48,8 @@
 
 .lemon-drop {
   animation: move-droplet 2s linear infinite;
+  fill: white;
+  z-index: 1000;
 }
 
 .logo-svg {

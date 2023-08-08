@@ -1,16 +1,14 @@
-import Image from '../image.tsx';
-
 export default function Footer() {
   return (
-    <footer class="bg-gray-800 text-white text-xs sm:text-base">
-      <a target="_blank" href="https://github.com/xenofront/" class="fixed right-4 mt-6 sm:left-4 z-10">
-        <Image path="/me-logo.svg" alt="logo" classes="w-20 sm:w-24"/>
+    <footer class="bg-gray-800 text-white text-xs sm:text-base p-2">
+      <a target="_blank" href="https://github.com/xenofront/" class="fixed right-4 mt-1 sm:left-4 z-10">
+        <img src={'/me-logo.svg'} alt="my logo" class="w-20 sm:w-24"/>
       </a>
       <div class="text-left sm:text-center ml-4 sm:mr-0">
         &copy; {new Date().getFullYear()} Mini Fresh App - Powered by&nbsp;
         <a target="_blank" href="https://fresh.deno.dev/">
 
-          <svg xmlns="http://www.w3.org/2000/svg" class="logo-svg mt-3">
+          <svg xmlns="http://www.w3.org/2000/svg" class="logo-svg">
             <path
               d="M34.092 8.845C38.929 20.652 34.092 27 30 30.5c1 3.5-2.986 4.222-4.5 2.5-4.457 1.537-13.512 1.487-20-5C2 24.5 4.73 16.714 14 11.5c8-4.5 16-7 20.092-2.655Z"
               fill="#FFDB1E"/>

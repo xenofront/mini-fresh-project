@@ -1,6 +1,5 @@
 import { useSignal } from '@preact/signals';
 import Button from '../../components/button.tsx';
-import H from '../../shared/H.ts';
 
 const boxCentimetersSubtract = 3.2;
 
@@ -18,14 +17,6 @@ export default function DimensionsForm() {
   const finalText = useSignal({});
 
   const isFormValid = useSignal(true);
-
-  const logInfo = async () => {
-    try {
-      await fetch('api/geolocation');
-    } catch (err) {
-      H.log(err, 'ERROR');
-    }
-  };
   const handleSubmit = (e) => {
     isFormValid.value = true;
     e.preventDefault();
